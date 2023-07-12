@@ -1,2 +1,4 @@
 /gpt_logs
+/.idea
+/__pycache__
 openai-key.txt
