@@ -5,7 +5,7 @@ import pathlib
 
 
 class GPTChat:
-    def __init__(self, file_name, system_msg="concise", model="gpt-3.5-turbo"):
+    def __init__(self, file_name, system_msg="helpful", model="gpt-4"):
         if system_msg == "con_coder":
             system_msg = "You are a concise assistant that only writes code."
         elif system_msg == "concise":
@@ -16,6 +16,11 @@ class GPTChat:
             system_msg = "Du bist ein Assistent, der Daten zum Training eines GPT-Models generiert. Egal was die " \
                          "Aufgabenstellung ist, erfindest du niemals neue Fakten, sondern generierst nur neue " \
                          "Formulierungen."
+        elif system_msg == "summarizer-pitcher":
+            system_msg = "You are a technical writer who presents complex information in a digestible way to " \
+                         "investors and other stakeholders."
+        elif system_msg == "helpful":
+            system_msg = "You are a helpful assistant."
 
         path = pathlib.Path(__file__).parent.resolve() / "openai-key.txt"
         with open(path, "r") as file:
